@@ -1,0 +1,4 @@
+api:
+  update_msg: update  data success
+  delete_msg: Delete  data success
+  no_user_msg: No data Found

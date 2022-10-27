@@ -1,4 +1,4 @@
-package StudentDetails.specification;
+package api.studentsDetails;
 
 import io.restassured.builder.ResponseSpecBuilder;
 import io.restassured.specification.ResponseSpecification;
@@ -26,5 +26,4 @@ public class StudentDetailsResponses {
                 .expectBody("msg", is(msg))
                 .build();
     }
-
 }

@@ -1,7 +1,8 @@
-package Tests;
+package tests;
 
-import Models.Student;
-import Models.StudentDetailsDTO;
+import base.BaseTest;
+import models.Student;
+import models.StudentDetailsDTO;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;

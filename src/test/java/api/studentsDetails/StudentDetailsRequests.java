@@ -1,6 +1,6 @@
-package StudentDetails.specification;
+package api.studentsDetails;
 
-import Models.Student;
+import models.Student;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;

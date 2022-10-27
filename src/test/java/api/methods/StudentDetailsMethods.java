@@ -1,9 +1,9 @@
-package StudentDetails.methods;
+package api.methods;
 
-import Models.Student;
-import Models.StudentDetailsDTO;
-import StudentDetails.specification.StudentDetailsRequests;
-import StudentDetails.specification.StudentDetailsResponses;
+import models.Student;
+import models.StudentDetailsDTO;
+import api.studentsDetails.StudentDetailsRequests;
+import api.studentsDetails.StudentDetailsResponses;
 import io.restassured.common.mapper.TypeRef;
 
 import static io.restassured.RestAssured.given;
@@ -32,7 +32,7 @@ public class StudentDetailsMethods {
                .then()
                 .spec(studentResp.getResponseSpecWithStatus(200, "true"))
                 .extract()
-                .as(new TypeRef<StudentDetailsDTO>() {
+                .as(new TypeRef<>() {
                 });
     }
 
@@ -42,7 +42,7 @@ public class StudentDetailsMethods {
         .when()
                 .get()
         .then()
-                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "false", "No data Found"));
+                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "false", System.getProperty("no_user_msg")));
     }
 
     public void updateStudentData(Student student) {
@@ -51,7 +51,7 @@ public class StudentDetailsMethods {
         .when()
                 .put()
         .then()
-                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "true", "update  data success"));
+                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "true", System.getProperty("update_msg")));
     }
 
     public void deleteStudent(Integer id) {
@@ -60,6 +60,6 @@ public class StudentDetailsMethods {
         .when()
                 .delete()
         .then()
-                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "true", "Delete  data success"));
+                .spec(studentResp.getResponseSpecWithStatusAndMsg(200, "true", System.getProperty("delete_msg")));
     }
 }
