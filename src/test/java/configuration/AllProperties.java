@@ -7,6 +7,7 @@ import java.util.Map;
 
 public class AllProperties {
     static Logger logger = LoggerFactory.getLogger(AllProperties.class);
+    YamlReader yamlReader = new YamlReader();
     private Api api;
 
     private AllProperties(){
@@ -18,7 +19,7 @@ public class AllProperties {
     }
 
     private void setApiProperties() {
-        api = YamlReader.getConfig().getApi();
+        api = yamlReader.getConfig().getApi();
         Map<String, Object> apiProperties = api.getApiProperties();
         for (Map.Entry entry : apiProperties.entrySet()) {
             System.setProperty(entry.getKey().toString(), entry.getValue().toString());
