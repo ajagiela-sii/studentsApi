@@ -14,8 +14,6 @@ public class StudentStepDef extends BaseTest{
     private Student student;
     private Integer id;
 
-    private Integer age;
-
     @Given("New student {string}, {string}, {string}, {string} is going to join to school")
     public void new_student_is_going_to_join_to_school(String firstName, String middleName, String surname, String dateOfBirth) {
         student = new Student(firstName, middleName, surname, dateOfBirth);
